@@ -26,6 +26,16 @@ namespace WinFormsApp_EmployeeDatabaseCRUDApplications
         public EmpRepository()
         {
             entities = new EmployeeSystemEntities();
+            foreach (var e in entities.Employees)
+            {
+                foreach (var d in entities.Departments)
+                {
+                    if (e.DeptID == d.DeptID)
+                    {
+                        e.DeptName = d.DeptName;
+                    }
+                }
+            }
         }
         public void AddRecord(Employee employee)
         {

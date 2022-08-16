@@ -19,7 +19,6 @@ namespace WinFormsApp_EmployeeDatabaseCRUDApplications
         public string LastName { get; set; }
         public Nullable<System.DateTime> DateOfBirth { get; set; }
         public int DeptID { get; set; }
-    
         public virtual Department Department { get; set; }
     }
 }
