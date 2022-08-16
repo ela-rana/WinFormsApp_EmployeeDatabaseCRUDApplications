@@ -13,7 +13,7 @@ namespace WinFormsApp_EmployeeDatabaseCRUDApplications
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EmployeeSystemEntities : DbContext
+    public partial class EmployeeSystemEntities : DbContext //EmployeeSystemEntities is the C# representation your actual db
     {
         public EmployeeSystemEntities()
             : base("name=EmployeeSystemEntities")
