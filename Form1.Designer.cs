@@ -31,23 +31,23 @@ namespace WinFormsApp_EmployeeDatabaseCRUDApplications
         {
             this.dtgrdEmployeeRecords = new System.Windows.Forms.DataGridView();
             this.grpAddRecord = new System.Windows.Forms.GroupBox();
+            this.btnAddNewRecord = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblEmployeID = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.lblDepartment = new System.Windows.Forms.Label();
             this.txtEmployeeID = new System.Windows.Forms.TextBox();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.btnAddNewRecord = new System.Windows.Forms.Button();
             this.dttmDateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.cmbbxDepartment = new System.Windows.Forms.ComboBox();
             this.grpDisplayRecords = new System.Windows.Forms.GroupBox();
             this.btnRefreshGrid = new System.Windows.Forms.Button();
             this.grpUpdateRecord = new System.Windows.Forms.GroupBox();
-            this.grpDeleteRecord = new System.Windows.Forms.GroupBox();
             this.btnUpdateRecord = new System.Windows.Forms.Button();
+            this.grpDeleteRecord = new System.Windows.Forms.GroupBox();
             this.btnDeleteRecord = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgrdEmployeeRecords)).BeginInit();
             this.grpAddRecord.SuspendLayout();
@@ -81,6 +81,17 @@ namespace WinFormsApp_EmployeeDatabaseCRUDApplications
             this.grpAddRecord.TabStop = false;
             this.grpAddRecord.Text = "Add New Employee Record";
             // 
+            // btnAddNewRecord
+            // 
+            this.btnAddNewRecord.Location = new System.Drawing.Point(155, 222);
+            this.btnAddNewRecord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddNewRecord.Name = "btnAddNewRecord";
+            this.btnAddNewRecord.Size = new System.Drawing.Size(145, 28);
+            this.btnAddNewRecord.TabIndex = 1;
+            this.btnAddNewRecord.Text = "Add New Record";
+            this.btnAddNewRecord.UseVisualStyleBackColor = true;
+            this.btnAddNewRecord.Click += new System.EventHandler(this.btnAddNewRecord_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -107,6 +118,22 @@ namespace WinFormsApp_EmployeeDatabaseCRUDApplications
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(425, 149);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(119, 62);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(301, 24);
+            this.txtLastName.TabIndex = 11;
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(119, 33);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(301, 24);
+            this.txtFirstName.TabIndex = 10;
             // 
             // lblEmployeID
             // 
@@ -166,33 +193,6 @@ namespace WinFormsApp_EmployeeDatabaseCRUDApplications
             this.txtEmployeeID.Size = new System.Drawing.Size(301, 24);
             this.txtEmployeeID.TabIndex = 9;
             // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(119, 33);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(301, 24);
-            this.txtFirstName.TabIndex = 10;
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(119, 62);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(301, 24);
-            this.txtLastName.TabIndex = 11;
-            // 
-            // btnAddNewRecord
-            // 
-            this.btnAddNewRecord.Location = new System.Drawing.Point(155, 222);
-            this.btnAddNewRecord.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAddNewRecord.Name = "btnAddNewRecord";
-            this.btnAddNewRecord.Size = new System.Drawing.Size(145, 28);
-            this.btnAddNewRecord.TabIndex = 1;
-            this.btnAddNewRecord.Text = "Add New Record";
-            this.btnAddNewRecord.UseVisualStyleBackColor = true;
-            this.btnAddNewRecord.Click += new System.EventHandler(this.btnAddNewRecord_Click);
-            // 
             // dttmDateOfBirth
             // 
             this.dttmDateOfBirth.CustomFormat = "yyyy-mm-dd";
@@ -245,16 +245,6 @@ namespace WinFormsApp_EmployeeDatabaseCRUDApplications
             this.grpUpdateRecord.TabStop = false;
             this.grpUpdateRecord.Text = "Update Employee Record";
             // 
-            // grpDeleteRecord
-            // 
-            this.grpDeleteRecord.Controls.Add(this.btnDeleteRecord);
-            this.grpDeleteRecord.Location = new System.Drawing.Point(909, 456);
-            this.grpDeleteRecord.Name = "grpDeleteRecord";
-            this.grpDeleteRecord.Size = new System.Drawing.Size(281, 283);
-            this.grpDeleteRecord.TabIndex = 4;
-            this.grpDeleteRecord.TabStop = false;
-            this.grpDeleteRecord.Text = "Delete Employee Record";
-            // 
             // btnUpdateRecord
             // 
             this.btnUpdateRecord.Location = new System.Drawing.Point(95, 219);
@@ -264,6 +254,16 @@ namespace WinFormsApp_EmployeeDatabaseCRUDApplications
             this.btnUpdateRecord.TabIndex = 2;
             this.btnUpdateRecord.Text = "Update Record";
             this.btnUpdateRecord.UseVisualStyleBackColor = true;
+            // 
+            // grpDeleteRecord
+            // 
+            this.grpDeleteRecord.Controls.Add(this.btnDeleteRecord);
+            this.grpDeleteRecord.Location = new System.Drawing.Point(909, 456);
+            this.grpDeleteRecord.Name = "grpDeleteRecord";
+            this.grpDeleteRecord.Size = new System.Drawing.Size(281, 283);
+            this.grpDeleteRecord.TabIndex = 4;
+            this.grpDeleteRecord.TabStop = false;
+            this.grpDeleteRecord.Text = "Delete Employee Record";
             // 
             // btnDeleteRecord
             // 
